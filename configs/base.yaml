@@ -29,6 +29,30 @@ models:
     hidden_dim: 256
     dropout: 0.30
 
+dataset:
+  candidate_size:
+    train: 14000
+    validate: 2000
+    test: 2000
+
+  final_size:
+    train: 12000
+    validate: 1500
+    test: 1500
+
+  text_column: clean_title
+  image_column: image_url
+  label_column: 2_way_label
+  id_column: id
+
+  require_has_image: true
+  require_valid_image: true
+
+  split_priority:
+    - test
+    - validate
+    - train
+
 training:
   device: auto
   batch_size: 16
@@ -52,3 +76,9 @@ evaluation:
 
   save_confusion_matrix: true
   save_roc_curve: true
+
+image_download:
+  timeout_seconds: 15
+  max_retries: 2
+  workers: 8
+  jpeg_quality: 95
