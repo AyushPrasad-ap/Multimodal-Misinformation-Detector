@@ -1,0 +1,54 @@
+project:
+  name: multimodal-misinformation-detection
+  seed: 42
+  num_classes: 2
+  labels:
+    0: real
+    1: fake
+
+paths:
+  data_root: data
+  raw_dir: data/raw
+  processed_dir: data/processed
+  model_dir: models/checkpoints
+  results_dir: results
+  log_dir: logs
+
+models:
+  text:
+    name: distilbert-base-uncased
+    max_length: 128
+    freeze: true
+
+  image:
+    name: resnet18
+    image_size: 224
+    freeze: true
+
+  fusion:
+    hidden_dim: 256
+    dropout: 0.30
+
+training:
+  device: auto
+  batch_size: 16
+  epochs: 3
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  num_workers: 0
+  pin_memory: true
+  mixed_precision: true
+
+  optimizer:
+    name: AdamW
+
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - roc_auc
+
+  save_confusion_matrix: true
+  save_roc_curve: true

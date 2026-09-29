@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+.dirtreeignore
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Dataset files
+data/raw/
+data/processed/
+data/cache/
+
+# Model checkpoints / large artifacts
+models/checkpoints/
+models/*.pt
+models/*.pth
+models/*.bin
+models/*.safetensors
+
+# Hugging Face / local caches
+hf_cache/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,17 @@
+﻿--extra-index-url https://download.pytorch.org/whl/cu124
+
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+torchaudio==2.6.0+cu124
+
+transformers==5.17.0
+datasets==5.0.1
+scikit-learn==1.9.1
+pandas==3.0.6
+numpy==2.5.2
+matplotlib==3.11.2
+seaborn==0.13.2
+Pillow==12.3.0
+tqdm==4.70.1
+PyYAML==6.0.3
+multiprocess==0.70.11
