@@ -10,7 +10,7 @@ paths:
   data_root: data
   raw_dir: data/raw
   processed_dir: data/processed
-  model_dir: models/checkpoints
+  checkpoint_dir: models/checkpoints
   results_dir: results
   log_dir: logs
 
@@ -62,9 +62,15 @@ training:
   num_workers: 0
   pin_memory: true
   mixed_precision: true
+  gradient_clip_norm: 1.0
+  early_stopping_patience: 2
 
   optimizer:
     name: AdamW
+
+  checkpoint:
+    monitor: val_loss
+    mode: min
 
 evaluation:
   metrics:
