@@ -17,3 +17,4 @@ PyYAML==6.0.3
 multiprocess==0.70.11
 requests==2.34.2
 imagehash
+streamlit
